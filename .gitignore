@@ -1,0 +1,16 @@
+target/
+.tools/
+.local/
+config/local.properties
+*.log
+.idea/
+.vscode/
+*.iml
+submission/
+tmp/
+output/
+.env
+.env.*
+!.env.example
+*.key
+*.pem

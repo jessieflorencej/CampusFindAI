@@ -1,0 +1,2631 @@
+# CAMPUS LOST & FOUND — SMART AI-POWERED COLLEGE LOST & FOUND PLATFORM
+
+Build a complete, creative, modern, secure, and fully usable **Campus Lost & Found Management System** exclusively for colleges and universities.
+
+The application should allow students and staff to report lost items, report found items, search for possible matches, claim belongings through an intensive verification process, communicate through an AI-powered chatbot, receive notifications, and allow administrators to review and manage the entire lost-and-found workflow.
+
+This should NOT look like a simple college CRUD project.
+
+It should look and behave like a real campus product that could actually be deployed and used by a university.
+
+---
+
+# PROJECT NAME
+
+Use a creative project name such as:
+
+**CampusFind AI**
+
+Tagline:
+
+**Lost on Campus. Found with Intelligence.**
+
+Alternative names:
+
+* FindMyCampus
+* CampusRecover AI
+* UniFind
+* LostLink Campus
+* CampusTrace AI
+
+Use **CampusFind AI** as the default project name.
+
+---
+
+# PROJECT OBJECTIVE
+
+CampusFind AI is an intelligent lost-and-found platform designed specifically for colleges.
+
+Students and staff can:
+
+* Report lost belongings
+* Report items they have found
+* Upload images
+* Search items
+* Ask an AI assistant
+* Receive possible matches
+* Claim found items
+* Complete ownership verification
+* Track claim status
+* Communicate securely
+* Receive notifications when possible matches appear
+
+Administrators can:
+
+* Review reports
+* Verify suspicious posts
+* Approve/reject ownership claims
+* Monitor misuse
+* Manage users
+* Manage lost/found inventory
+* Review AI-generated matches
+* Close successfully returned items
+* View analytics
+
+The application should strongly focus on:
+
+**Security, ownership verification, privacy, AI assistance, and real campus usability.**
+
+---
+
+# RECOMMENDED TECHNOLOGY STACK
+
+Build the project primarily using Java.
+
+## Backend
+
+Use:
+
+**Java 21**
+
+Preferred framework:
+
+**Spring Boot**
+
+Use:
+
+* Spring Boot
+* Spring MVC
+* Spring Data JPA
+* Spring Security
+* Hibernate
+* REST APIs
+* Bean Validation
+
+## Database
+
+Use:
+
+**MySQL**
+
+Alternative:
+
+PostgreSQL.
+
+## Frontend
+
+Preferred:
+
+* HTML5
+* CSS3
+* JavaScript
+* Bootstrap 5
+
+Optional advanced frontend:
+
+React or Angular.
+
+For a college Java assignment, Bootstrap + Thymeleaf is preferred because it keeps the project Java-focused.
+
+Use:
+
+**Thymeleaf + Spring Boot**
+
+unless otherwise required.
+
+---
+
+# APPLICATION USERS
+
+Create two completely separate types of accounts.
+
+## USER ACCOUNT
+
+Used by:
+
+* Students
+* Faculty
+* Staff
+
+User registration should collect:
+
+* Full name
+* College ID / registration number
+* College email
+* Department
+* Year
+* Phone number
+* Password
+* Profile image
+
+The account should ideally only allow institutional email addresses such as:
+
+`@college.edu`
+
+or the configured college domain.
+
+User roles:
+
+`ROLE_USER`
+
+---
+
+# ADMIN ACCOUNT
+
+Admin should have a separate login page.
+
+Admin role:
+
+`ROLE_ADMIN`
+
+Admin accounts must NOT be created from public registration.
+
+Admin accounts should be inserted by system setup or created by another administrator.
+
+Admin dashboard should contain powerful management functionality.
+
+---
+
+# LOGIN & AUTHENTICATION
+
+Create:
+
+## User Login
+
+Fields:
+
+College Email
+Password
+
+Options:
+
+Remember Me
+
+Forgot Password
+
+Create Account
+
+---
+
+## Admin Login
+
+Separate URL:
+
+`/admin/login`
+
+Admin login fields:
+
+Admin Email
+Password
+
+Do not display admin registration publicly.
+
+---
+
+# PASSWORD SECURITY
+
+Store passwords using:
+
+**BCrypt hashing**
+
+Never store plaintext passwords.
+
+Include:
+
+* password strength validation
+* session timeout
+* account lockout after repeated failed attempts
+* logout
+* CSRF protection
+* secure session handling
+
+---
+
+# HOME PAGE
+
+Create a premium campus-themed homepage.
+
+Header:
+
+CampusFind AI logo
+
+Navigation:
+
+Home
+Report Lost
+Report Found
+Browse Items
+AI Assistant
+My Claims
+Notifications
+Profile
+
+Buttons:
+
+Login
+Register
+
+Hero section:
+
+**Lost Something on Campus? Let AI Help You Find It.**
+
+Description:
+
+CampusFind AI connects students and staff who lose items with those who find them, using smart matching, AI assistance, image comparison, and secure ownership verification.
+
+Buttons:
+
+**Report Lost Item**
+
+**Report Found Item**
+
+**Ask CampusFind AI**
+
+Add statistics:
+
+Items Reported
+Items Returned
+Active Searches
+Successful Matches
+
+Example:
+
+1,248 Items Reported
+
+867 Items Returned
+
+92 Active Searches
+
+78% Successful Recovery Rate
+
+---
+
+# USER DASHBOARD
+
+After login, show personalized dashboard.
+
+Dashboard cards:
+
+My Lost Reports
+
+My Found Reports
+
+Potential Matches
+
+Pending Claims
+
+Successful Returns
+
+Unread Notifications
+
+Show:
+
+Recent activity
+
+Suggested matches
+
+Claim updates
+
+AI recommendations
+
+---
+
+# REPORT LOST ITEM
+
+Create a detailed lost item form.
+
+Fields:
+
+## Basic Information
+
+Item Name
+
+Category
+
+Description
+
+Brand
+
+Model
+
+Color
+
+Approximate Value
+
+---
+
+## Loss Information
+
+Date Lost
+
+Approximate Time Lost
+
+Campus Location
+
+Building
+
+Floor
+
+Room / Area
+
+Last Seen Location
+
+---
+
+## Image Upload
+
+Allow multiple images.
+
+Minimum:
+
+1 image recommended.
+
+Maximum:
+
+5 images.
+
+Supported:
+
+JPG
+JPEG
+PNG
+
+Create image preview before upload.
+
+---
+
+# IMPORTANT PRIVATE OWNERSHIP DETAILS
+
+When reporting a lost item, provide a section:
+
+**Private Verification Information**
+
+Explain:
+
+"These details will never be shown publicly. They will only be used to verify ownership if another user reports finding your item."
+
+Fields could include:
+
+* Serial number
+* Unique scratch
+* Sticker
+* Engraving
+* Case design
+* Hidden mark
+* Custom modification
+* Contents inside bag
+* Password hint without actual password
+* Approximate purchase date
+* Special identifying feature
+
+These fields should be encrypted or securely protected.
+
+---
+
+# REPORT FOUND ITEM
+
+Create a separate Found Item form.
+
+Fields:
+
+Item Name
+
+Category
+
+Description
+
+Brand
+
+Color
+
+Date Found
+
+Time Found
+
+Exact Campus Location Found
+
+Where Item Is Currently Stored
+
+Upload Images
+
+---
+
+# SECURITY REQUIREMENT FOR FOUND ITEMS
+
+Do NOT display every identifying detail publicly.
+
+Example:
+
+If someone finds:
+
+**Casio FX-991ES Plus Calculator**
+
+with:
+
+`JOHN 2145 scratched behind battery cover`
+
+the public listing should NOT expose:
+
+`JOHN 2145`.
+
+Instead show:
+
+**Casio scientific calculator found near Library Block.**
+
+Private details remain hidden for verification.
+
+This prevents someone from learning the identifying information and making a false claim.
+
+---
+
+# ITEM CATEGORIES
+
+Provide categories such as:
+
+Electronics
+
+Mobile Phone
+
+Laptop
+
+Tablet
+
+Calculator
+
+Earphones
+
+Charger
+
+Wallet
+
+ID Card
+
+Keys
+
+Books
+
+Notes
+
+Stationery
+
+Backpack
+
+Water Bottle
+
+Watch
+
+Jewelry
+
+Clothing
+
+Sports Equipment
+
+Documents
+
+Other
+
+Allow admin to add categories.
+
+---
+
+# LOST & FOUND ITEM LISTING
+
+Create cards containing:
+
+Image
+
+Item Type
+
+Category
+
+General Description
+
+Location
+
+Date
+
+Status
+
+Possible Match Indicator
+
+Button:
+
+View Details
+
+Do not expose sensitive ownership information.
+
+---
+
+# STATUS SYSTEM
+
+Items should move through statuses.
+
+For lost items:
+
+`LOST`
+
+`POSSIBLE_MATCH`
+
+`CLAIM_IN_PROGRESS`
+
+`FOUND`
+
+`RETURNED`
+
+`CLOSED`
+
+For found items:
+
+`FOUND_ITEM_REPORTED`
+
+`AVAILABLE_FOR_CLAIM`
+
+`CLAIM_PENDING`
+
+`CLAIM_VERIFIED`
+
+`RETURNED`
+
+`CLOSED`
+
+---
+
+# SMART MATCHING SYSTEM
+
+Implement a recommendation engine that compares lost reports with found reports.
+
+Matching factors:
+
+Item category
+
+Item name
+
+Brand
+
+Model
+
+Color
+
+Location
+
+Date
+
+Description keywords
+
+Image similarity
+
+Unique attributes
+
+Generate a match score.
+
+Example:
+
+**87% Possible Match**
+
+Display:
+
+Possible Match Found
+
+Casio FX-991ES Plus
+
+Found near Main Library
+
+Found: 14 August 2026
+
+Similarity Score: 87%
+
+---
+
+# MATCHING SCORE EXAMPLE
+
+Use a weighted matching model.
+
+Example:
+
+Category match = 20 points
+
+Brand match = 15 points
+
+Color match = 10 points
+
+Location proximity = 15 points
+
+Date proximity = 15 points
+
+Description similarity = 15 points
+
+Image similarity = 10 points
+
+Total:
+
+100
+
+Example:
+
+Match Score:
+
+84 / 100
+
+Classification:
+
+90–100 = Very Strong Match
+
+75–89 = Strong Match
+
+60–74 = Possible Match
+
+Below 60 = Low Confidence
+
+---
+
+# AI CHATBOT
+
+Build an intelligent chatbot called:
+
+**Findy AI**
+
+Alternative:
+
+**CampusFind Assistant**
+
+Use:
+
+**Findy AI**
+
+Personality:
+
+Friendly
+
+Helpful
+
+Concise
+
+Campus-focused
+
+Security-aware
+
+Never reveal private verification details
+
+The chatbot should behave like a campus lost-and-found assistant rather than a generic chatbot.
+
+---
+
+# AI CHATBOT EXAMPLE
+
+User:
+
+**I lost my calculator.**
+
+Findy AI should respond:
+
+"I found 4 currently unclaimed calculator reports that might be relevant. Do you remember the brand, color, or where you last used it?"
+
+Then show cards:
+
+### Match 1
+
+Casio Scientific Calculator
+
+Found near Library Block
+
+Found 2 hours ago
+
+Possible Match: 82%
+
+View Item
+
+### Match 2
+
+Scientific Calculator
+
+Found in Engineering Block Room 204
+
+Found yesterday
+
+Possible Match: 74%
+
+View Item
+
+---
+
+# CONVERSATIONAL SEARCH
+
+The chatbot should understand natural language.
+
+Examples:
+
+"I lost my calculator yesterday near the library."
+
+"I cannot find my black wallet."
+
+"Someone found my AirPods?"
+
+"I lost my ID card near the cafeteria."
+
+"I found a blue water bottle."
+
+"Show laptops found this week."
+
+"Any black Casio calculators?"
+
+---
+
+# AI CHATBOT RESPONSE FLOW
+
+Example:
+
+User:
+
+"I lost my calculator."
+
+AI:
+
+"Sorry to hear that. I can help search current found-item reports. Do you remember where you last used it?"
+
+User:
+
+"Library."
+
+AI searches database.
+
+AI:
+
+"I found 3 unclaimed calculators reported near the library in the last 7 days."
+
+Then list results.
+
+The chatbot must query the database and return ACTUAL matching records rather than giving fabricated responses.
+
+---
+
+# AI INTENT DETECTION
+
+Create intents such as:
+
+`SEARCH_LOST_ITEM`
+
+`SEARCH_FOUND_ITEM`
+
+`REPORT_LOST`
+
+`REPORT_FOUND`
+
+`CHECK_CLAIM`
+
+`SEARCH_CATEGORY`
+
+`SEARCH_LOCATION`
+
+`HELP`
+
+Extract entities such as:
+
+Item
+
+Brand
+
+Color
+
+Location
+
+Date
+
+Category
+
+Example:
+
+Input:
+
+"I lost my black Casio calculator near Block C yesterday."
+
+Extract:
+
+Item = Calculator
+
+Brand = Casio
+
+Color = Black
+
+Location = Block C
+
+Date = Yesterday
+
+Then search the database.
+
+---
+
+# INTENSIVE ITEM CLAIM VERIFICATION
+
+This should be one of the MOST IMPORTANT features.
+
+Someone clicking:
+
+**Claim This Item**
+
+must NOT automatically receive owner contact information.
+
+Start a multi-stage ownership verification process.
+
+---
+
+# OWNERSHIP VERIFICATION — STAGE 1
+
+## Account Verification
+
+Check:
+
+Verified college email
+
+College ID
+
+Account history
+
+Account age
+
+Any previous suspicious claims
+
+Number of unsuccessful claims
+
+---
+
+# OWNERSHIP VERIFICATION — STAGE 2
+
+## Ownership Questions
+
+Ask claimant questions based on private characteristics.
+
+Example:
+
+Public listing:
+
+**Black Casio Scientific Calculator**
+
+Questions:
+
+"What exact model is your calculator?"
+
+"Does the calculator have any unique marks?"
+
+"Was anything written or engraved on it?"
+
+"What type of cover did it have?"
+
+"When did you purchase it?"
+
+"Where exactly do you remember losing it?"
+
+The claimant should NOT see the original answers.
+
+---
+
+# OWNERSHIP VERIFICATION — STAGE 3
+
+## IMAGE PROOF
+
+Require claimant to upload proof.
+
+Allow:
+
+Previous photos containing item
+
+Purchase receipt
+
+Product box
+
+Warranty information
+
+Screenshot of purchase
+
+Photo showing serial number
+
+Example:
+
+If claiming a laptop:
+
+Upload:
+
+Invoice
+
+Laptop box serial number
+
+Previous photo of laptop
+
+---
+
+# OWNERSHIP VERIFICATION — STAGE 4
+
+## SERIAL NUMBER MATCH
+
+For electronics, optionally compare:
+
+IMEI
+
+Serial Number
+
+Model Number
+
+Asset Number
+
+Partial serial number can be entered.
+
+System should securely compare it with hidden information.
+
+Never expose original serial number.
+
+---
+
+# OWNERSHIP VERIFICATION — STAGE 5
+
+## AI VERIFICATION SCORE
+
+Generate verification confidence.
+
+Example:
+
+Identity verification:
+
+20/20
+
+Description consistency:
+
+18/20
+
+Location consistency:
+
+17/20
+
+Private questions:
+
+25/30
+
+Image evidence:
+
+14/20
+
+Serial number:
+
+10/10
+
+Total:
+
+104/120
+
+Convert:
+
+87% Ownership Confidence
+
+Display:
+
+**Strong Ownership Evidence**
+
+---
+
+# OWNERSHIP VERIFICATION — STAGE 6
+
+## FINDER VERIFICATION
+
+The person who found the item may receive limited verification questions.
+
+Example:
+
+Claimant says:
+
+"My calculator has a small crack near the solar panel."
+
+Finder can confirm:
+
+Yes
+
+No
+
+Unsure
+
+Do not disclose hidden details beforehand.
+
+---
+
+# OWNERSHIP VERIFICATION — STAGE 7
+
+## ADMIN APPROVAL
+
+For high-value items, require admin approval.
+
+Examples:
+
+Laptop
+
+Phone
+
+Tablet
+
+Wallet
+
+Jewelry
+
+Watch
+
+Expensive headphones
+
+Admin sees:
+
+Claimant details
+
+Evidence
+
+Uploaded images
+
+Question responses
+
+Match score
+
+AI confidence
+
+Finder response
+
+Account history
+
+Admin can:
+
+Approve Claim
+
+Reject Claim
+
+Request More Evidence
+
+Flag Suspicious Claim
+
+---
+
+# CLAIM SECURITY
+
+Limit number of active claims per user.
+
+Example:
+
+Maximum:
+
+3 active claims
+
+Detect repeated fraudulent attempts.
+
+If a user incorrectly claims many items:
+
+Flag account.
+
+Example:
+
+**Suspicious Claim Activity Detected**
+
+---
+
+# CLAIM WORKFLOW
+
+Use:
+
+`CLAIM_SUBMITTED`
+
+↓
+
+`AUTOMATED_CHECK`
+
+↓
+
+`FINDER_REVIEW`
+
+↓
+
+`ADMIN_REVIEW`
+
+↓
+
+`APPROVED`
+
+or
+
+`MORE_INFORMATION_REQUIRED`
+
+or
+
+`REJECTED`
+
+↓
+
+`ITEM_HANDOVER`
+
+↓
+
+`RETURN_CONFIRMED`
+
+↓
+
+`CLOSED`
+
+---
+
+# CLAIM TRACKING PAGE
+
+Show progress:
+
+Claim Submitted ✓
+
+Automated Verification ✓
+
+Finder Confirmation ✓
+
+Admin Review ⏳
+
+Handover Pending
+
+Completed
+
+---
+
+# SAFE ITEM HANDOVER
+
+Never display a finder’s personal phone number publicly.
+
+After approval, suggest safe campus return points:
+
+Security Office
+
+Administration Office
+
+Library Reception
+
+Department Office
+
+Campus Lost & Found Desk
+
+---
+
+# HANDOVER CODE
+
+Generate a one-time handover code.
+
+Example:
+
+**CF-728491**
+
+Finder and claimant must verify the code.
+
+Optional:
+
+Generate QR code.
+
+At handover:
+
+Claimant scans QR
+
+or
+
+Enters OTP
+
+Finder confirms transfer.
+
+Then set:
+
+`RETURNED`
+
+---
+
+# RETURN CONFIRMATION
+
+Both parties confirm:
+
+"I have received my item."
+
+"I have returned the item."
+
+Record:
+
+Date
+
+Time
+
+Location
+
+User IDs
+
+Claim ID
+
+Audit information
+
+---
+
+# AI IMAGE MATCHING
+
+Optional advanced feature.
+
+When images are uploaded:
+
+Extract visual features such as:
+
+Shape
+
+Color
+
+Logo
+
+Object type
+
+Pattern
+
+Use them to compare lost and found images.
+
+Example:
+
+Lost report image
+
+↓
+
+Image recognition
+
+↓
+
+Found report image
+
+↓
+
+Similarity
+
+**Image Match: 91%**
+
+If full computer vision is too complex for the college project, create an extensible Java service:
+
+`ImageMatchingService`
+
+that can later integrate with:
+
+Google Vision
+
+AWS Rekognition
+
+OpenAI Vision
+
+TensorFlow
+
+---
+
+# DUPLICATE DETECTION
+
+Detect duplicate reports.
+
+Example:
+
+Same user reports:
+
+"Lost iPhone 15"
+
+multiple times.
+
+System should identify possible duplicate submissions.
+
+---
+
+# LOCATION SYSTEM
+
+Create campus locations.
+
+Example:
+
+Main Library
+
+Engineering Block
+
+CSE Block
+
+ECE Block
+
+Cafeteria
+
+Auditorium
+
+Sports Ground
+
+Hostel
+
+Parking
+
+Administration Block
+
+Laboratory
+
+Bus Stop
+
+Classrooms
+
+Allow admins to configure locations.
+
+---
+
+# OPTIONAL CAMPUS MAP
+
+Display locations on a simple campus map.
+
+When reporting an item:
+
+Select building
+
+Floor
+
+Room
+
+Zone
+
+This improves item matching.
+
+---
+
+# SMART NOTIFICATIONS
+
+Users receive notifications such as:
+
+**Possible Match Found**
+
+"We found a report that may match your lost calculator."
+
+**Claim Approved**
+
+"Your ownership claim has been approved."
+
+**More Evidence Required**
+
+"Administrator requested additional proof."
+
+**Item Returned**
+
+"Your item recovery has been completed."
+
+---
+
+# EMAIL NOTIFICATIONS
+
+Optional:
+
+Send emails for:
+
+Account registration
+
+Possible match
+
+Claim status
+
+Approval
+
+Handover details
+
+Return confirmation
+
+---
+
+# MY ITEMS
+
+Create page:
+
+**My Lost Items**
+
+**My Found Items**
+
+Each item should show:
+
+Thumbnail
+
+Title
+
+Date
+
+Location
+
+Status
+
+Matches
+
+Claims
+
+Edit
+
+Close
+
+---
+
+# MY CLAIMS
+
+Show:
+
+Claim ID
+
+Item
+
+Submitted Date
+
+Verification Score
+
+Current Status
+
+Next Required Action
+
+---
+
+# SEARCH
+
+Create advanced search.
+
+Search by:
+
+Item name
+
+Category
+
+Brand
+
+Color
+
+Location
+
+Date Range
+
+Lost / Found
+
+Claim Status
+
+Use filters.
+
+Example:
+
+Category:
+
+Calculator
+
+Location:
+
+Library
+
+Date:
+
+Last 7 Days
+
+Status:
+
+Available
+
+---
+
+# PRIVACY PROTECTION
+
+Never display:
+
+Student phone number
+
+College registration number
+
+Serial numbers
+
+Exact ownership verification answers
+
+Uploaded receipts
+
+Private evidence
+
+Personal email address
+
+until appropriate permissions exist.
+
+---
+
+# FRAUD PREVENTION
+
+Implement:
+
+Rate limiting
+
+Claim attempt tracking
+
+Suspicious account detection
+
+Duplicate claim detection
+
+Repeated incorrect answers detection
+
+Admin flagging
+
+Audit logs
+
+Potential blacklist
+
+---
+
+# ADMIN DASHBOARD
+
+Admin dashboard should display:
+
+Total Users
+
+Active Lost Reports
+
+Active Found Reports
+
+Possible Matches
+
+Claims Pending
+
+Items Returned
+
+Suspicious Claims
+
+Return Success Rate
+
+---
+
+# ADMIN FUNCTIONS
+
+Admin can:
+
+View all users
+
+Activate/deactivate users
+
+Manage categories
+
+Manage campus locations
+
+View reports
+
+Edit inappropriate reports
+
+Delete fraudulent reports
+
+Review claims
+
+Request more evidence
+
+Approve/reject claims
+
+Review AI recommendations
+
+View flagged activity
+
+View audit logs
+
+Manage announcements
+
+Close resolved items
+
+---
+
+# ADMIN CLAIM REVIEW SCREEN
+
+Show:
+
+Claimant Name
+
+College ID
+
+Account Status
+
+Claimed Item
+
+Claim Date
+
+Lost Report
+
+Found Report
+
+Question Responses
+
+Uploaded Evidence
+
+AI Confidence Score
+
+Match Score
+
+Finder Response
+
+Previous Claim History
+
+Admin buttons:
+
+APPROVE
+
+REJECT
+
+REQUEST MORE EVIDENCE
+
+FLAG ACCOUNT
+
+---
+
+# AUDIT LOG
+
+Track important actions.
+
+Fields:
+
+Audit ID
+
+User ID
+
+Action
+
+Resource
+
+Timestamp
+
+IP Address
+
+Result
+
+Examples:
+
+USER_LOGIN
+
+REPORT_CREATED
+
+CLAIM_SUBMITTED
+
+CLAIM_APPROVED
+
+CLAIM_REJECTED
+
+ITEM_RETURNED
+
+ADMIN_ACTION
+
+---
+
+# REPUTATION SYSTEM
+
+Optional creative feature.
+
+Users receive community reputation.
+
+Examples:
+
++10
+
+Successfully returned an item.
+
++5
+
+Reported useful found item.
+
++20
+
+Multiple successful returns.
+
+Badges:
+
+**Helpful Finder**
+
+**Campus Hero**
+
+**Trusted Contributor**
+
+**Recovery Champion**
+
+Do not reward users financially.
+
+---
+
+# CAMPUS HERO SECTION
+
+Display anonymized statistics:
+
+"23 students helped this month."
+
+"₹2.4 lakh worth of belongings recovered."
+
+"148 successful returns."
+
+Do not display sensitive personal data.
+
+---
+
+# DATABASE DESIGN
+
+Create tables/entities such as:
+
+## users
+
+user_id
+
+name
+
+email
+
+college_id
+
+department
+
+year
+
+phone
+
+password_hash
+
+role
+
+status
+
+reputation_score
+
+created_at
+
+---
+
+## admins
+
+admin_id
+
+name
+
+email
+
+password_hash
+
+role
+
+created_at
+
+---
+
+## lost_items
+
+lost_item_id
+
+user_id
+
+item_name
+
+category_id
+
+brand
+
+model
+
+color
+
+description
+
+date_lost
+
+time_lost
+
+location_id
+
+status
+
+created_at
+
+---
+
+## found_items
+
+found_item_id
+
+finder_user_id
+
+item_name
+
+category_id
+
+brand
+
+color
+
+description
+
+date_found
+
+time_found
+
+location_id
+
+storage_location
+
+status
+
+created_at
+
+---
+
+## item_images
+
+image_id
+
+item_type
+
+item_id
+
+image_url
+
+uploaded_at
+
+---
+
+## verification_details
+
+verification_id
+
+item_id
+
+serial_number_hash
+
+unique_mark
+
+hidden_description
+
+purchase_date
+
+verification_notes
+
+---
+
+## matches
+
+match_id
+
+lost_item_id
+
+found_item_id
+
+match_score
+
+ai_confidence
+
+status
+
+created_at
+
+---
+
+## claims
+
+claim_id
+
+claimant_user_id
+
+found_item_id
+
+lost_item_id
+
+claim_status
+
+verification_score
+
+created_at
+
+updated_at
+
+---
+
+## claim_answers
+
+answer_id
+
+claim_id
+
+question
+
+answer
+
+score
+
+---
+
+## claim_evidence
+
+evidence_id
+
+claim_id
+
+file_url
+
+evidence_type
+
+uploaded_at
+
+---
+
+## notifications
+
+notification_id
+
+user_id
+
+message
+
+type
+
+is_read
+
+created_at
+
+---
+
+## audit_logs
+
+audit_id
+
+user_id
+
+action
+
+ip_address
+
+timestamp
+
+---
+
+# JAVA ENTITY CLASSES
+
+Create classes such as:
+
+`User`
+
+`Admin`
+
+`LostItem`
+
+`FoundItem`
+
+`Category`
+
+`CampusLocation`
+
+`ItemImage`
+
+`VerificationDetails`
+
+`ItemMatch`
+
+`Claim`
+
+`ClaimQuestion`
+
+`ClaimEvidence`
+
+`Notification`
+
+`AuditLog`
+
+---
+
+# JAVA ARCHITECTURE
+
+Follow clean layered architecture.
+
+```text
+Controller
+     ↓
+Service
+     ↓
+Repository
+     ↓
+Database
+```
+
+Packages:
+
+```text
+com.campusfind
+│
+├── controller
+├── service
+├── repository
+├── entity
+├── dto
+├── security
+├── ai
+├── verification
+├── notification
+├── exception
+├── config
+└── util
+```
+
+---
+
+# IMPORTANT SERVICES
+
+Create:
+
+`UserService`
+
+`LostItemService`
+
+`FoundItemService`
+
+`MatchingService`
+
+`ClaimService`
+
+`VerificationService`
+
+`ChatbotService`
+
+`NotificationService`
+
+`AdminService`
+
+`ImageService`
+
+`AuditService`
+
+---
+
+# AI MODULE
+
+Create package:
+
+`com.campusfind.ai`
+
+Classes:
+
+`CampusFindAssistant`
+
+`IntentDetector`
+
+`EntityExtractor`
+
+`ItemRecommendationEngine`
+
+`NaturalLanguageSearchService`
+
+`MatchScoringEngine`
+
+The chatbot should interact with actual application data.
+
+---
+
+# CHATBOT DATABASE SEARCH EXAMPLE
+
+Input:
+
+"I lost my calculator near the library yesterday."
+
+System extracts:
+
+```text
+Item = Calculator
+Location = Library
+Date = Yesterday
+```
+
+Query found items:
+
+```sql
+SELECT *
+FROM found_items
+WHERE category = 'Calculator'
+AND location = 'Library'
+AND status = 'AVAILABLE_FOR_CLAIM';
+```
+
+Rank results.
+
+Return top matches.
+
+---
+
+# CHATBOT SECURITY RULE
+
+The AI MUST NEVER reveal:
+
+Serial numbers
+
+Hidden markings
+
+Ownership answers
+
+Private finder information
+
+Receipts
+
+Student ID numbers
+
+Private verification evidence
+
+Instead say:
+
+"Some identifying information is hidden for security. You can start the ownership verification process if you believe this item belongs to you."
+
+---
+
+# UI DESIGN
+
+Make the UI modern and professional.
+
+Use:
+
+Soft blue
+
+Deep navy
+
+White
+
+Teal accents
+
+Rounded cards
+
+Clean shadows
+
+Campus illustrations
+
+Modern typography
+
+Responsive design
+
+---
+
+# MAIN NAVIGATION
+
+Logo:
+
+CampusFind AI
+
+Menu:
+
+Dashboard
+
+Lost Items
+
+Found Items
+
+Report Item
+
+AI Assistant
+
+Claims
+
+Notifications
+
+Profile
+
+Admin users should have a separate admin navigation.
+
+---
+
+# ITEM DETAIL PAGE
+
+Show:
+
+Images
+
+Item name
+
+Category
+
+General description
+
+Date
+
+General location
+
+Report status
+
+Match confidence
+
+Security notice
+
+Button:
+
+**This Might Be Mine**
+
+Do not display hidden ownership details.
+
+---
+
+# PROFILE PAGE
+
+Show:
+
+Profile Picture
+
+Name
+
+College ID
+
+Department
+
+Year
+
+Email
+
+Account Status
+
+Reputation Score
+
+Number of Items Returned
+
+Number of Claims
+
+Edit Profile
+
+Change Password
+
+---
+
+# ERROR HANDLING
+
+Create custom exceptions:
+
+`ItemNotFoundException`
+
+`UserNotFoundException`
+
+`UnauthorizedClaimException`
+
+`DuplicateClaimException`
+
+`InvalidVerificationException`
+
+Use a centralized exception handler.
+
+---
+
+# VALIDATION
+
+Validate:
+
+Required fields
+
+College email format
+
+File type
+
+File size
+
+Date cannot be invalid
+
+Claim duplication
+
+Empty description
+
+Incorrect IDs
+
+Unauthorized actions
+
+---
+
+# PROJECT REPORT REQUIREMENTS
+
+Generate documentation containing:
+
+Project Title
+
+Abstract
+
+Problem Statement
+
+Existing System
+
+Limitations of Existing System
+
+Proposed System
+
+Objectives
+
+Modules
+
+Functional Requirements
+
+Non-Functional Requirements
+
+Architecture
+
+Use Case Diagram
+
+Class Diagram
+
+Sequence Diagram
+
+Activity Diagram
+
+ER Diagram
+
+Database Design
+
+Algorithms
+
+AI Matching Algorithm
+
+Verification Algorithm
+
+Screenshots
+
+Testing
+
+Advantages
+
+Limitations
+
+Future Enhancements
+
+Conclusion
+
+References
+
+---
+
+# USE CASES
+
+Main actors:
+
+Student/User
+
+Finder
+
+Claimant
+
+Administrator
+
+AI Assistant
+
+Major use cases:
+
+Register
+
+Login
+
+Report Lost Item
+
+Report Found Item
+
+Search Item
+
+Upload Image
+
+Ask AI Assistant
+
+Receive Match
+
+Start Claim
+
+Answer Verification Questions
+
+Upload Proof
+
+Finder Confirmation
+
+Admin Approval
+
+Return Item
+
+Confirm Handover
+
+Manage System
+
+---
+
+# FUTURE ENHANCEMENTS
+
+Mention:
+
+Mobile application
+
+QR-based item identification
+
+RFID integration
+
+NFC identification
+
+Advanced computer vision
+
+AI image similarity
+
+Campus CCTV integration subject to privacy rules
+
+Real-time push notifications
+
+Multiple colleges
+
+SSO with university credentials
+
+Google Maps / indoor campus mapping
+
+Multi-language chatbot
+
+Voice-based reporting
+
+---
+
+# SAMPLE COMPLETE USER JOURNEY
+
+Student **Arun** loses a Casio calculator in the library.
+
+He reports:
+
+Casio FX-991EX
+
+Black
+
+Lost near Library Reading Hall
+
+Tuesday around 3 PM
+
+He uploads an old image.
+
+Another student **Priya** finds a black calculator near the library and reports it.
+
+CampusFind AI calculates:
+
+Category Match: 100%
+
+Brand Match: 100%
+
+Location Match: 95%
+
+Date Match: 90%
+
+Image Similarity: 87%
+
+Overall:
+
+**92% Possible Match**
+
+Arun receives:
+
+"Findy AI found a high-confidence match for your calculator."
+
+Arun clicks:
+
+**This Might Be Mine**
+
+Verification asks:
+
+What model?
+
+Any scratches?
+
+Does the calculator have any writing?
+
+What kind of case?
+
+Approximate purchase month?
+
+Arun uploads an old image showing the calculator.
+
+The hidden lost report says:
+
+"Small white scratch beside SHIFT key."
+
+Arun answers correctly.
+
+System calculates:
+
+Ownership Confidence:
+
+94%
+
+Priya verifies the scratch.
+
+Admin reviews evidence.
+
+Claim approved.
+
+System generates:
+
+Handover Code:
+
+**CF-482791**
+
+They meet at:
+
+Campus Security Office.
+
+Priya enters the handover code.
+
+Arun confirms:
+
+**Item Received**
+
+Item status becomes:
+
+**RETURNED**
+
+Both users receive confirmation.
+
+Priya earns:
+
+**Campus Hero Badge**
+
+---
+
+# FINAL DEVELOPMENT REQUIREMENT
+
+Generate the project as a complete working Java application.
+
+Do not create placeholder buttons.
+
+Do not create pages that only visually exist.
+
+All major buttons, forms, searches, authentication, database operations, claims, verification, AI searches, matching, admin controls, and status changes should work.
+
+Provide:
+
+1. Complete folder structure
+2. Maven `pom.xml`
+3. SQL schema
+4. Entity classes
+5. Repository classes
+6. Service classes
+7. Controllers
+8. Spring Security configuration
+9. Authentication
+10. User registration
+11. Admin login
+12. Lost item module
+13. Found item module
+14. Image upload
+15. Search
+16. AI chatbot
+17. Matching algorithm
+18. Claim verification
+19. Evidence upload
+20. Admin approval
+21. Notifications
+22. Audit logging
+23. Thymeleaf frontend
+24. CSS
+25. JavaScript
+26. Database setup
+27. Sample test data
+28. Instructions to run the project
+29. Test cases
+30. README documentation
+
+Use clean Java coding standards and meaningful variable names.
+
+Add comments only where useful.
+
+Apply object-oriented concepts including:
+
+Encapsulation
+
+Inheritance
+
+Abstraction
+
+Polymorphism
+
+Interfaces
+
+Exception Handling
+
+Collections
+
+Generics where appropriate
+
+File Handling
+
+JDBC/JPA
+
+Multithreading where meaningful
+
+Streams
+
+Lambda expressions
+
+The finished project should be suitable for:
+
+**College demonstration**
+
+**Java lab/project evaluation**
+
+**Viva examination**
+
+**GitHub publishing**
+
+**Portfolio presentation**
+
+and should feel like a real-world campus product rather than a basic academic CRUD application.

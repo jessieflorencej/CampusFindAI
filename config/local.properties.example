@@ -1,0 +1,13 @@
+# Use this only when connecting to your own existing MySQL instance.
+# Copy to config/local.properties and enter your database account.
+spring.datasource.url=jdbc:mysql://localhost:3306/campus_lost_found?useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=UTC
+spring.datasource.username=campus_app
+spring.datasource.password=REPLACE_WITH_YOUR_PASSWORD
+# Campus customization:
+
+# campus.demo-data=false
+# campus.base-url=http://localhost:8080
+# campus.mail-mode=outbox
+# For real email, set campus.mail-mode=smtp and configure spring.mail.*.
+# campus.crypto-key-file=.local/encryption.key
+# Keep the generated encryption key with your database backups.
